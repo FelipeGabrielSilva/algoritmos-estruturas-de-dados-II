@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "xiosbase": "cpp",
+        "xstring": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
