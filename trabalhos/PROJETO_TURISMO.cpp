@@ -65,7 +65,7 @@ struct idx_cliente
 };
 
 /*Pacotes: Codigo_pacote, Descricao, Codigo_guia, valor_por_pessoa, total_participantes, quant_max_participantes
-** Criar dois �ndices: Codigo_pacote e Codigo_guia*/
+** Criar dois andices: Codigo_pacote e Codigo_guia*/
 
 struct pacote
 {
@@ -85,7 +85,7 @@ struct idx_pacote
 };
 
 /*Vendas: Codigo_venda, Codigo_cliente, Codigo_pacote, quantidade_pessoas, valor_total
-** Criar dois �ndices: Codigo_venda e Codigo_cliente*/
+** Criar dois andices: Codigo_venda e Codigo_cliente*/
 
 struct venda
 {
@@ -103,8 +103,7 @@ struct idx_venda
     int endereco;
 };
 
-// 1) Escreva fun��es espec�ficas para a leitura dos dados das estruturas: paises, Cidades.
-
+// 1) Escreva funaaes especaficas para a leitura dos dados das estruturas: paises, Cidades.
 void ler_pais(pais paises[], idx_pais idx_paises[], int &cont_pais)
 {
     int cod_temp = cont_pais + 1;
@@ -179,9 +178,9 @@ void ler_cidade(cidade cidades[], idx_cidade idx_cidades[], int &cont_cidade, pa
     }
 }
 
-/*2) Escreva uma fun��o para permitir a inclus�o de novos registros na tabela de Guias.
-2.1) O programa dever� garantir que o Codigo do guia a ser inserido nao existe na tabela de Guias.
-2.2) Quando o usu�rio digitar o Codigo da cidade, o programa dever� buscar este Codigo na tabela de Cidades e exibir o nome da cidade e UF e o nome do pais.*/
+/*2) Escreva uma funaao para permitir a inclusao de novos registros na tabela de Guias.
+2.1) O programa devera garantir que o Codigo do guia a ser inserido nao existe na tabela de Guias.
+2.2) Quando o usuario digitar o Codigo da cidade, o programa devera buscar este Codigo na tabela de Cidades e exibir o nome da cidade e UF e o nome do pais.*/
 
 void ler_guia(guia guias[], idx_guia idx_guias[], int &cont_guia, cidade cidades[], idx_cidade idx_cidades[], int cont_cidade, pais paises[], idx_pais idx_paises[], int cont_pais)
 {
@@ -257,9 +256,9 @@ void ler_guia(guia guias[], idx_guia idx_guias[], int &cont_guia, cidade cidades
     cont_guia++;
 }
 
-/*3) Escreva uma fun��o para permitir a inclus�o de novos registros na tabela de Clientes.
-3.1) O programa dever� garantir que o Codigo do cliente a ser inserido nao existe na tabela de clientes.
-3.2) Quando o usu�rio digitar o Codigo da cidade, o programa dever� buscar este Codigo na tabela de Cidades e exibir o nome da cidade e UF e o nome do pais.*/
+/*3) Escreva uma funaao para permitir a inclusao de novos registros na tabela de Clientes.
+3.1) O programa devera garantir que o Codigo do cliente a ser inserido nao existe na tabela de clientes.
+3.2) Quando o usuario digitar o Codigo da cidade, o programa devera buscar este Codigo na tabela de Cidades e exibir o nome da cidade e UF e o nome do pais.*/
 
 void ler_cliente(cliente clientes[], idx_cliente idx_clientes[], int &cont_cliente, guia guias[], idx_guia idx_guias[], int cont_guia, cidade cidades[], idx_cidade idx_cidades[], int cont_cidade, pais paises[], idx_pais idx_paises[], int cont_pais)
 {
@@ -332,8 +331,8 @@ void ler_cliente(cliente clientes[], idx_cliente idx_clientes[], int &cont_clien
     cont_cliente++;
 }
 
-/*4) Escreva uma fun��o para permitir a exclus�o de registros na tabela de Clientes.
-4.1) O programa nao dever� permitir a exclus�o de clientes que possuam vendas cadastradas em seu nome.*/
+/*4) Escreva uma funaao para permitir a exclusao de registros na tabela de Clientes.
+4.1) O programa nao devera permitir a exclusao de clientes que possuam vendas cadastradas em seu nome.*/
 
 void excluir_cliente(cliente clientes[], idx_cliente idx_clientes[], venda vendas[], idx_venda idx_vendas[], int &cont_cliente, int &cont_venda)
 {
@@ -388,7 +387,7 @@ void excluir_cliente(cliente clientes[], idx_cliente idx_clientes[], venda venda
     clientes[idx_clientes[idx_cliente_encontrado].endereco].status = 1;
     cout << "Cliente excluido com sucesso!" << endl;
 
-    // Reorganiza��o:
+    // Reorganizaaao:
     int j = 0;
     for (int i = 0; i < cont_cliente; i++)
     {
@@ -402,8 +401,8 @@ void excluir_cliente(cliente clientes[], idx_cliente idx_clientes[], venda venda
     cont_cliente = j;
 }
 
-/*5) Escreva uma fun��o para permitir a exclus�o de registros na tabela de Guias.
-5.1) O programa nao dever� permitir a exclus�o de guias que possuam pacotes cadastrados em seu nome.*/
+/*5) Escreva uma funaao para permitir a exclusao de registros na tabela de Guias.
+5.1) O programa nao devera permitir a exclusao de guias que possuam pacotes cadastrados em seu nome.*/
 
 void excluir_guia(guia guias[], idx_guia idx_guias[], pacote pacotes[], idx_pacote idx_pacotes[], int &cont_guia, int &cont_pacote)
 {
@@ -458,7 +457,7 @@ void excluir_guia(guia guias[], idx_guia idx_guias[], pacote pacotes[], idx_paco
     guias[idx_guias[idx_guia_encontrado].endereco].status = 1;
     cout << "Guia excluido com sucesso!" << endl;
 
-    // Reorganiza��o:
+    // Reorganizaaao:
     int j = 0;
     for (int i = 0; i < cont_guia; i++)
     {
@@ -472,8 +471,8 @@ void excluir_guia(guia guias[], idx_guia idx_guias[], pacote pacotes[], idx_paco
     cont_guia = j;
 }
 
-/*6) Escreva uma fun��o para permitir a inclus�o de novos registros na tabela de Pacotes.
-6.1) Quando o usu�rio digitar o Codigo do guia, o programa dever� buscar este Codigo na tabela de Guias e exibir o nome do guia, o nome da cidade e o nome do pais.*/
+/*6) Escreva uma funaao para permitir a inclusao de novos registros na tabela de Pacotes.
+6.1) Quando o usuario digitar o Codigo do guia, o programa devera buscar este Codigo na tabela de Guias e exibir o nome do guia, o nome da cidade e o nome do pais.*/
 
 void ler_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int &cont_pacote,
                 guia guias[], idx_guia idx_guias[], int cont_guia,
@@ -487,13 +486,14 @@ void ler_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int &cont_pacote,
         cout << "Pacote Numero " << cod_temp << ":" << endl;
         pacotes[cont_pacote].seqpacote = cod_temp;
         cin.ignore();
+
         cout << "Descricao: ";
         getline(cin, pacotes[cont_pacote].descricao);
 
-        // Leitura do Codigo do guia
-        cout << "Codigo do Guia: ";
         int cod_temp_guia;
+        cout << "Codigo do Guia: ";
         cin >> cod_temp_guia;
+
         pacotes[cont_pacote].seqguia = cod_temp_guia;
 
         bool guia_existe = false;
@@ -570,11 +570,11 @@ void ler_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int &cont_pacote,
     }
 }
 
-/*7.1) Quando o usu�rio digitar o Codigo_cliente, o programa dever� buscar este Codigo na tabela de Clientes e exibir seu nome e o nome da sua cidade.
-7.2) Quando o usu�rio digitar o Codigo_pacote, o programa dever� buscar este Codigo na tabela de Pacotes e exibir a Descricao, o nome do guia e o valor por pessoa.
-7.3) Quando o usu�rio digitar quantidade_pessoas, o programa dever� adicionar esta informa��o ao total_participantes da tabela de Pacotes.
-7.3.1) O programa nao dever� permitir que o total_participantes seja maior do que quant_max_participantes.
-7.4) O programa dever� calcular e exibir o valor total a ser pago pelo cliente e gravar essa informa��o em valor_total na tabela Vendas.*/
+/*7.1) Quando o usuario digitar o Codigo_cliente, o programa devera buscar este Codigo na tabela de Clientes e exibir seu nome e o nome da sua cidade.
+7.2) Quando o usuario digitar o Codigo_pacote, o programa devera buscar este Codigo na tabela de Pacotes e exibir a Descricao, o nome do guia e o valor por pessoa.
+7.3) Quando o usuario digitar quantidade_pessoas, o programa devera adicionar esta informacao ao total_participantes da tabela de Pacotes.
+7.3.1) O programa nao devera permitir que o total_participantes seja maior do que quant_max_participantes.
+7.4) O programa devera calcular e exibir o valor total a ser pago pelo cliente e gravar essa informcaao em valor_total na tabela Vendas.*/
 
 void ler_venda(venda vendas[], idx_venda idx_vendas[], int &cont_venda,
                cliente clientes[], idx_cliente idx_clientes[], int cont_cliente,
@@ -590,9 +590,10 @@ void ler_venda(venda vendas[], idx_venda idx_vendas[], int &cont_venda,
         cout << "Venda Numero " << cod_temp << ":" << endl;
         vendas[cont_venda].seqvenda = cod_temp;
 
-        cout << "Codigo do Cliente: ";
         int cod_temp_cliente;
+        cout << "Codigo do Cliente: ";
         cin >> cod_temp_cliente;
+
         vendas[cont_venda].seqcliente = cod_temp_cliente;
 
         bool cliente_existe = false;
@@ -671,8 +672,8 @@ void ler_venda(venda vendas[], idx_venda idx_vendas[], int &cont_venda,
             cout << "Guia: " << nome_guia << endl;
             cout << "Valor por Pessoa: " << valor_por_pessoa << endl;
 
-            cout << "Quantidade de pessoas para a venda: ";
             int quantidade_pessoas;
+            cout << "Quantidade de pessoas para a venda: ";
             cin >> quantidade_pessoas;
 
             if (total_participantes_pacote + quantidade_pessoas > max_participantes_pacote)
@@ -708,7 +709,7 @@ void ler_venda(venda vendas[], idx_venda idx_vendas[], int &cont_venda,
     }
 }
 
-/*8) Escreva uma fun��o para permitir ao usu�rio consultar os dados de determinado pacote.
+/*8) Escreva uma funaao para permitir ao usuario consultar os dados de determinado pacote.
 8.1) Para cada pacote consultado, exibir: todos os seus dados e o valor total arrecadado pelo pacote (valor_por_pessoa * total_participantes).*/
 
 void busca_binaria_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int cont_pacote)
@@ -745,7 +746,7 @@ void busca_binaria_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int cont_p
     if (pacote_encontrado)
     {
 
-        cout << "Pacote encontrado:" << endl;
+        cout << "\nPacote encontrado:" << endl;
         cout << "Codigo do Pacote: " << pacotes[endereco_pacote].seqpacote << endl;
         cout << "Descricao: " << pacotes[endereco_pacote].descricao << endl;
         cout << "Codigo do Guia: " << pacotes[endereco_pacote].seqguia << endl;
@@ -763,8 +764,8 @@ void busca_binaria_pacote(pacote pacotes[], idx_pacote idx_pacotes[], int cont_p
     }
 }
 
-/*9) Escreva uma fun��o para exibir todos os registros da tabela Pacotes que tenham sido completamente vendidos (total_participantes = quant_max_participantes).
-  9.1) As seguintes informa��es devem ser exibidas: Codigo, Descricao, nome do guia, valor total arrecadado pelo pacote (valor_por_pessoa * total_participantes).*/
+/*9) Escreva uma funaao para exibir todos os registros da tabela Pacotes que tenham sido completamente vendidos (total_participantes = quant_max_participantes).
+  9.1) As seguintes informaaaes devem ser exibidas: Codigo, Descricao, nome do guia, valor total arrecadado pelo pacote (valor_por_pessoa * total_participantes).*/
 
 void exibir_pacotes_completamente_vendidos(pacote pacotes[], idx_pacote idx_pacotes[], int cont_pacote, guia guias[], int cont_guia)
 {
@@ -802,9 +803,9 @@ void exibir_pacotes_completamente_vendidos(pacote pacotes[], idx_pacote idx_paco
         cout << "Nenhum pacote completamente vendido." << endl;
     }
 }
-/*10) Escreva uma fun��o para exibir todos os registros da tabela de vendas.
-10.1) As seguintes informa��es devem ser exibidas: Codigo, nome do cliente, Descricao do pacote, quantidade_pessoas e valor_total da venda.
-10.2) Ao final, a fun��o dever� exibir o valor total vendido.*/
+/*10) Escreva uma funaao para exibir todos os registros da tabela de vendas.
+10.1) As seguintes informaaaes devem ser exibidas: Codigo, nome do cliente, Descricao do pacote, quantidade_pessoas e valor_total da venda.
+10.2) Ao final, a funaao devera exibir o valor total vendido.*/
 
 void exibir_vendas(venda vendas[], cliente clientes[], pacote pacotes[], idx_venda idx_vendas[], int cont_venda, int cont_cliente, int cont_pacote)
 {
@@ -997,7 +998,7 @@ int main()
         cout << " 10) - Excluir cliente sem registros de Vendas:\n";
         cout << " 11) - Excluir guia sem registros de Pacotes:\n";
         cout << "  0) - Sair\n";
-        cout << "\n Escolha uma Opcao: ";
+        cout << "\nEscolha uma Opcao: ";
         cin >> opcao;
 
         switch (opcao)
